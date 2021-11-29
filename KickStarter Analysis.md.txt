@@ -1,0 +1,46 @@
+# Kickstarting with Excel
+
+## Overview of Project
+
+### Purpose
+
+The purpose of this project was to analyze Kickstarter campaigns, especially those similar to Louise's Kickstarter for her play *Fever*, and how successful they were based on a few different criteria. We looked at data for other Kickstarter campaigns that were for theater projects as a whole and their success based on when the campaigns started, as well as specifically campaigns for plays in the theater, and how those campaigns fared based on the fundraising goals set. This analysis can help us see what factors may play a part in having a successful Kickstarter campaign that reaches its goal.
+
+## Analysis and Challenges
+
+### Analysis of Outcomes Based on Launch Date
+
+We looked at the outcomes of the different Kickstarter campaigns in the theater category based on which month of the year the campaigns were launched. In order to get a better visual for these outcomes, we created a pivot table from the data in Excel to filter how many of the completed Kickstarter campaigns in the theater category were successful, how many had failed and how many were canceled. Then based on that pivot table, we created a line graph to visualize the number of successful, failed and canceled campaigns there were, given which month the campaigns started.
+
+Images are inlcuded in the attached 'Resources' folder with the pivot table from Excel, the field list to show which fields were assigned to which area to create the pivot table and the line graph that was created from the resulting pivot table.
+
+### Analysis of Outcomes Based on Goals
+
+We also looked at the outcomes of theater Kickstarter campaigns, specifically those in the plays subcategory, based on what their fundraising goals were. In order to get this data from the full dataset, we first identified fundraising goal ranges to use in our analysis, and the used Excel's COUNTIFS function to return the number of successful, failed and canceled Kickstarter campaigns for plays, based on which goal range they were in. We then used the SUM function to find how many total projects there were for each goal range, so that we could then use that total number to calculate the percentages of Kickstarter campaigns that were successful, failed or canceled for each goal range. To calculate these percentages in Excel, we divided the number of successful, failed and canceled campaigns for each range by that ranges total number of campaigns, and used a ROUND function to round each of those to 2 decimal places. Finally we created a line graph to show the percentages of successful, failed and canceled campaigns for each goal range.
+
+Images of the full table and the line graph are included in the attached 'Resources' folder, and examples of the Excel functions used to find and calculate the correct data are included below.
+
+> =COUNTIFS(KickStarter!$F:$F,"successful",KickStarter!$D:$D,">=1000",KickStarter!$D:$D,"<=4999",KickStarter!$S:$S,"plays")
+> =SUM(B3:D3)
+> =ROUND((B3/$E3)*100,2)
+
+### Challenges and Difficulties Encountered
+
+There was really only one major challenge that came up when doing the analysis of these Kickstarter campaigns. The only thing that caused any issues at first was making sure to get all of the formatting and syntax correct for the COUNTIFS functions when doing the analysis of the outcomes of the Kickstarters based on the fundraising goals, but that was resolved pretty quickly by putting all of the criteria used in the function in quotations, and it was all pretty smooth from that point on. Another possible issue that could change some results would also include ensuring that the functions are written correctly to capture all of the data within the goal range. If the criteria in the function are not written to be inclusive with the goal amounts, some of the Kickstarter campaigns may not be captured in the correct ranges, and then not factored into the analysis.
+
+## Results
+
+- What are two conclusions you can draw about the Outcomes based on Launch Date?
+From the outcomes based on launch date, we can conclude that the months in the middle of the year (May-August) look to be the best time of the year to launch a Kickstarter campaign for a theater project. Those 4 months have more successful campaigns than all of the other 8 months of the year.
+Another conclusion we can draw from this data is that December is the worst month of the year to launch a Kickstarter campaign. For the month of December, there are more Kickstarter campaigns that were not successful (either failed or canceled) than there were that were successful.
+
+- What can you conclude about the Outcomes based on Goals?
+For the outcomes based on goals, we can conclude that Kickstarter campaigns for plays with goals less than $1000 and between $1000-$4999 are the most likely to be successful. Those two ranges not only have the highest number of total campaigns, but they are also the only two ranges with success rates greater than 70%.
+
+- What are some limitations of this dataset?
+One potential limitation with this dataset is a lack of information about who is donating to these campaigns. Knowing more about which segemnts of the population are typically contributing to certain categories and subcategories can help fundraisers possibly target their fundraising more and then maybe be more likely to have a successful Kickstarter campaign.
+Another limitation would be some outliers and small sample sizes for some of the goal ranges. There were only 86 total campaigns for plays with goals greater than $15,000 out of more than 1000 campaigns, so there is a small sample size for those ranges, making it difficult to really come to any conclusions for those goal ranges.
+
+- What are some other possible tables and/or graphs that we could create?
+Some other tables we could create for to better analyze this data would include some percentage data for the outcomes based on launch date. Another table and line graph to look at the percentage of successful campaigns launched in each month instead of just the numbers of successful, failed and canceled campaigns can give us some more insight into which months of the year have higher success rates and would likely be a better time to launch a campaign.
+We could also look at the goal ranges for successful campaigns and see how many backers those campaigns had and what the average donations are for those campaigns. Knowing what the average donation is and how many backers you might typically need to reach a certain goal could help with targeting different specific segments to find enough backers to reach the goal.
